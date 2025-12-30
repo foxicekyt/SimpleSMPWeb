@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | SimpleSMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #00d2ff;
+            --primary-purple: #9d50bb;
+            --dark-bg: #0f0f0f;
+            --sidebar-bg: #151515;
+            --card-bg: #1e1e1e;
+            /* Farby Rankov */
+            --rank-kamos: #bdc3c7;
+            --rank-premium: #55ffff;
+            --rank-ultimate: #ff55ff;
+            --rank-ultimate-plus: #ff5555;
+            --rank-ultimate-plus-plus: #ffaa00;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(0,0,0,0.8);
+            border-bottom: 2px solid var(--primary-blue);
+            position: relative;
+        }
+
+        .store-logo {
+            max-width: 280px;
+            height: auto;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 35px;
+            left: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back-home:hover { color: var(--primary-blue); }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: var(--sidebar-bg);
+            padding: 40px 20px;
+            border-right: 1px solid #333;
+        }
+
+        .sidebar h2 {
+            font-family: 'Press+Start+2P', cursive;
+            font-size: 0.7rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .nav-list { list-style: none; padding: 0; }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #bbb;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.03);
+            margin-bottom: 12px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+            color: white;
+        }
+
+        .content {
+            flex: 1;
+            padding: 50px;
+        }
+
+        .section-title {
+            font-family: 'Press+Start+2P', cursive;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .item-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+            border-color: var(--primary-blue);
+        }
+
+        .item-card i { margin-bottom: 20px; }
+
+        .item-card h3 {
+            font-family: 'Press+Start+2P', cursive;
+            font-size: 0.8rem;
+            margin: 10px 0;
+        }
+
+        .price {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #4caf50;
+        }
+
+        .buy-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: #388e3c;
+            transform: scale(1.02);
+        }
+
+        /* Špeciálne úpravy rankov */
+        .card-premium { border-top: 5px solid var(--rank-premium); }
+        .card-ultimate { border-top: 5px solid var(--rank-ultimate); }
+        .card-ultimate-p { border-top: 5px solid var(--rank-ultimate-plus); }
+        .card-ultimate-pp { 
+            border: 2px solid var(--rank-ultimate-plus-plus); 
+            background: linear-gradient(145deg, #1e1e1e, #2d1f00);
+        }
+
+        @media (max-width: 900px) {
+            .main-container { flex-direction: column; }
+            .sidebar { width: 100%; box-sizing: border-box; border-right: none; border-bottom: 1px solid #333; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> DOMOV</a>
+        <img src="storelogo.png" alt="SimpleSMP Store" class="store-logo">
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h2>KATEGÓRIE</h2>
+            <ul class="nav-list">
+                <li><a href="#" class="nav-link active"><i class="fas fa-crown"></i> VIP Ranky</a></li>
+                <li><a href="#" class="nav-link active"><i class="fas fa-crown"></i> Peniaze Comming Soon.</a></li>
+                <li><a href="crates.html" class="nav-link"><i class="fas fa-key"></i> Crate Kľúče</a></li>
+                <li><a href="tokens.html" class="nav-link active"><i class="fas fa-gem"></i> Tokeny</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h1 class="section-title">VIP Ranky</h1>
+            
+            <div class="grid">
+                <div class="item-card" style="border-top: 5px solid var(--rank-kamos);">
+                    <i class="fas fa-user-friends fa-4x" style="color: var(--rank-kamos);"></i>
+                    <h3>VIP</h3>
+                    <p style="font-size: 0.8rem; color: #aaa;">Základný rank.</p>
+                    <div>
+                        <span class="price">2.00€</span>
+                        <button class="buy-btn" onclick="window.location.href='vipbuy.html'">KÚPIŤ</button>
+                    </div>
+                </div>
+
+                <div class="item-card card-premium">
+                    <i class="fas fa-shield-alt fa-4x" style="color: var(--rank-premium);"></i>
+                    <h3>PREMIUM</h3>
+                    <p style="font-size: 0.8rem; color: #aaa;">Prístup k /fly a základné kity.</p>
+                    <div>
+                        <span class="price">5.00€</span>
+                        <button class="buy-btn" onclick="window.location.href='premiumbuy.html'">KÚPIŤ</button>
+                    </div>
+                </div>
+
+                <div class="item-card card-ultimate">
+                    <i class="fas fa-gem fa-4x" style="color: var(--rank-ultimate);"></i>
+                    <h3>ULTIMATE</h3>
+                    <p style="font-size: 0.8rem; color: #aaa;">Farebný chat a viac home bodov.</p>
+                    <div>
+                        <span class="price">10.00€</span>
+                        <button class="buy-btn" onclick="window.location.href='ultimatebuy.html'">KÚPIŤ</button>
+                    </div>
+                </div>
+
+                <div class="item-card card-ultimate-p">
+                    <i class="fas fa-fire fa-4x" style="color: var(--rank-ultimate-plus);"></i>
+                    <h3>ULTIMATE+</h3>
+                    <p style="font-size: 0.8rem; color: #aaa;">Všetko z Ultimate + častice.</p>
+                    <div>
+                        <span class="price">15.00€</span>
+                        <button class="buy-btn" onclick="window.location.href='ultimateplusbuy.html'">KÚPIŤ</button>
+                    </div>
+                </div>
+
+                <div class="item-card card-ultimate-pp">
+                    <i class="fas fa-crown fa-4x" style="color: var(--rank-ultimate-plus-plus);"></i>
+                    <h3 style="color: var(--rank-ultimate-plus-plus);">ULTIMATE++</h3>
+                    <p style="font-size: 0.8rem; color: #aaa;">Najvyšší rank na serveri.</p>
+                    <div>
+                        <span class="price">25.00€</span>
+                        <button class="buy-btn" onclick="window.location.href='ultimateplusplusbuy.html'">KÚPIŤ</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

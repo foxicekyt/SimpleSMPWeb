@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Tím | SimpleSMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #00d2ff;
+            --primary-purple: #9d50bb;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            /* Farby Rankov */
+            --rank-owner: #ff5555;
+            --rank-manager: #ffaa00;
+            --rank-hdev: #55ffff;
+            --rank-mod: #55ff55;
+            --rank-admin: #aa00aa;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Horná lišta */
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(0,0,0,0.8);
+            border-bottom: 2px solid var(--primary-blue);
+            position: relative;
+        }
+
+        .ateam-logo {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 35px;
+            left: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back-home:hover { color: var(--primary-blue); }
+
+        /* Hlavný obsah */
+        .content {
+            flex: 1;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Press+Start+2P', cursive;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Mriežka tímu */
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-member-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 20px;
+            width: 240px;
+            border: 1px solid #333;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 15px 30px rgba(0,210,255,0.2);
+        }
+
+        /* 3D Skin Postava */
+        .full-skin {
+            width: 160px;
+            height: auto;
+            image-rendering: pixelated; /* Aby bol skin ostrý */
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            transition: 0.3s;
+        }
+
+        .team-member-card:hover .full-skin {
+            filter: drop-shadow(0 10px 20px var(--primary-blue));
+        }
+
+        .member-name {
+            font-family: 'Press+Start+2P', cursive;
+            font-size: 0.8rem;
+            margin: 20px 0 10px 0;
+            color: #eee;
+        }
+
+        /* Ranky - Štýly */
+        .member-rank {
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 6px 20px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .rank-owner { background: var(--rank-owner); box-shadow: 0 0 10px var(--rank-owner); }
+        .rank-manager { background: var(--rank-manager); box-shadow: 0 0 10px var(--rank-manager); }
+        .rank-hdev { background: var(--rank-hdev); color: #000; box-shadow: 0 0 10px var(--rank-hdev); }
+        .rank-mod { background: var(--rank-mod); color: #000; box-shadow: 0 0 10px var(--rank-mod); }
+        .rank-admin { background: var(--rank-admin); box-shadow: 0 0 10px var(--rank-admin); }
+
+        /* Mobilná verzia */
+        @media (max-width: 600px) {
+            .back-home { position: static; display: block; margin-bottom: 20px; }
+            .team-member-card { width: 100%; max-width: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> SPÄŤ NA DOMOV</a>
+        <img src="ateamlogo.png" alt="SimpleSMP A-Team" class="ateam-logo">
+    </header>
+
+    <main class="content">
+        <h1 class="section-title">Náš Admin Tím</h1>
+        
+        <div class="team-grid">
+            
+            <div class="team-member-card">
+                <img src="https://visage.surgeplay.com/full/350/Dominik25_CZe.png" alt="Dominik25_CZe" class="full-skin">
+                <p class="member-name">Dominik25_CZe</p>
+                <span class="member-rank rank-owner">Owner</span>
+            </div>
+
+            <div class="team-member-card">
+                <img src="https://visage.surgeplay.com/full/350/jezevcik20.png" alt="Sweazyy" class="full-skin">
+                <p class="member-name">jezevcik20</p>
+                <span class="member-rank rank-manager">Manager</span>
+            </div>
+
+            <div class="team-member-card">
+                <img src="https://visage.surgeplay.com/full/350/Foxicek012.png" alt="Foxicek012" class="full-skin">
+                <p class="member-name">Foxicek012</p>
+                <span class="member-rank rank-hdev">H.Dev</span>
+            </div>
+
+            <div class="team-member-card">
+                <img src="https://visage.surgeplay.com/full/350/DivadCZ.png" alt="DivadCZ" class="full-skin">
+                <p class="member-name">DivadCZ</p>
+                <span class="member-rank rank-mod">Mod</span>
+            </div>
+
+            <div class="team-member-card">
+                <img src="https://visage.surgeplay.com/full/350/Fitt.png" alt="SeniorDenix_" class="full-skin">
+                <p class="member-name">SeniorDenix_</p>
+                <span class="member-rank rank-admin">Admin</span>
+            </div>
+
+            <div class="team-member-card">
+                <img src="https://visage.surgeplay.com/full/350/Lapiduch_cz.png" alt="Lapiduch_cz" class="full-skin">
+                <p class="member-name">lapiduch_cz</p>
+                <span class="member-rank rank-admin">Admin</span>
+            </div>
+
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: #444; font-size: 0.8rem;">
+        &copy; 2025 SimpleSMP Admin Team
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleSMP | Minecraft Server</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #00d2ff;
+            --primary-purple: #9d50bb;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Horná navigácia */
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: white;
+            font-family: 'Press+Start+2P', cursive;
+            font-size: 0.7rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-blue);
+            box-shadow: 0 0 15px var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.admin {
+            border-color: var(--primary-purple);
+        }
+
+        /* Hlavný obsah */
+        header {
+            padding: 80px 20px 30px 20px;
+            text-align: center;
+        }
+
+        .main-logo {
+            max-width: 280px;
+            filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.4));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .ip-container {
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: none;
+            color: white;
+        }
+
+        .ip-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--primary-blue);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-blue);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: -webkit-linear-gradient(var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-card h3 {
+            font-family: 'Press+Start+2P', cursive;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .discord-btn {
+            background: #5865F2;
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-bottom: 50px;
+        }
+
+        footer { padding-bottom: 30px; color: #444; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="store.html" class="nav-btn"><i class="fas fa-shopping-cart"></i> STORE</a>
+            <a href="adminteam.html" class="nav-btn admin"><i class="fas fa-users"></i> ADMIN TEAM</a>
+        </div>
+    </nav>
+
+    <header>
+        <img src="simplesmp.png" alt="SimpleSMP Logo" class="main-logo">
+    </header>
+
+    <button class="ip-container" onclick="copyIP()">
+        <i class="fas fa-server"></i> IP: mc.simplesmp.tk
+    </button>
+
+    <div class="features">
+        <div class="feature-card">
+            <i class="fas fa-coins"></i>
+            <h3>Ekonomika</h3>
+            <p>Prepracovaný systém peňazí a obchodovania.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-gem"></i>
+            <h3>Tokeny</h3>
+            <p>Získavaj odmeny za plnenie úloh.</p>
+        </div>
+
+        <div class="feature-card" style="border-bottom-color: #ffcc00;">
+            <i class="fas fa-shopping-bag"></i>
+            <h3>Store</h3>
+            <p>Ranky a výhody na našom eshope.</p>
+        </div>
+    </div>
+
+    <a href="https://discord.gg/HDZn9raWTm" class="discord-btn" target="_blank">
+        <i class="fab fa-discord fa-2x"></i> DISCORD SERVER
+    </a>
+
+    <footer>
+        &copy; 2025 SimpleSMP
+    </footer>
+
+    <script>
+        function copyIP() {
+            navigator.clipboard.writeText("mc.simplesmp.tk");
+            alert("IP adresa mc.simplesmp.tk bola skopírovaná!");
+        }
+    </script>
+
+</body>
+</html>

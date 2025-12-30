@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crate Kľúče | SimpleSMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #00d2ff;
+            --dark-bg: #0f0f0f;
+            --sidebar-bg: #151515;
+            --card-bg: #1e1e1e;
+            --magic-color: #00d2ff;
+            --witch-color: #a349a4;
+            --cosmetic-color: #ffaa00;
+            --winter-color: #ffffff;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex; flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%; text-align: center; padding: 20px 0;
+            background: rgba(0,0,0,0.8);
+            border-bottom: 2px solid var(--primary-blue);
+            position: relative;
+        }
+
+        .store-logo { max-width: 250px; }
+
+        .back-home {
+            position: absolute; top: 35px; left: 30px;
+            color: white; text-decoration: none; font-weight: bold;
+        }
+
+        .main-container { display: flex; flex: 1; }
+
+        .sidebar {
+            width: 280px; background: var(--sidebar-bg);
+            padding: 40px 20px; border-right: 1px solid #333;
+        }
+
+        .sidebar h2 {
+            font-family: 'Press+Start+2P', cursive; font-size: 0.7rem;
+            color: var(--primary-blue); margin-bottom: 30px; text-align: center;
+        }
+
+        .nav-list { list-style: none; padding: 0; }
+        .nav-link {
+            text-decoration: none; color: #bbb; display: flex;
+            align-items: center; gap: 15px; padding: 15px;
+            border-radius: 12px; transition: 0.3s; margin-bottom: 10px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(0, 210, 255, 0.1); color: var(--primary-blue);
+        }
+
+        .content { flex: 1; padding: 50px; }
+        .section-title {
+            font-family: 'Press+Start+2P', cursive; font-size: 1.2rem;
+            margin-bottom: 40px; text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px; max-width: 1100px; margin: 0 auto;
+        }
+
+        .item-card {
+            background: var(--card-bg); border-radius: 20px;
+            padding: 30px 20px; text-align: center;
+            border: 1px solid #333; transition: 0.4s;
+        }
+
+        .item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .item-card i { margin-bottom: 20px; filter: drop-shadow(0 0 10px currentColor); }
+
+        .item-card h3 {
+            font-family: 'Press+Start+2P', cursive; font-size: 0.75rem; margin-bottom: 15px;
+        }
+
+        .price {
+            display: block; font-size: 1.5rem; font-weight: bold;
+            margin: 15px 0; color: #4caf50;
+        }
+
+        .buy-btn {
+            background: #4caf50; color: white; border: none;
+            padding: 10px; border-radius: 8px; width: 100%;
+            font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+
+        .buy-btn:hover { background: #388e3c; }
+
+        .magic { border-top: 4px solid var(--magic-color); }
+        .witch { border-top: 4px solid var(--witch-color); }
+        .cosmetic { border-top: 4px solid var(--cosmetic-color); }
+        .winter { border: 2px solid var(--winter-color); background: linear-gradient(145deg, #1e1e1e, #001a33); }
+
+        @media (max-width: 900px) {
+            .main-container { flex-direction: column; }
+            .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #333; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> DOMOV</a>
+        <img src="storelogo.png" alt="SimpleSMP Store" class="store-logo">
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h2>KATEGÓRIE</h2>
+            <ul class="nav-list">
+                <li><a href="store.html" class="nav-link"><i class="fas fa-crown"></i> VIP Ranky</a></li>
+                <li><a href="crates.html" class="nav-link active"><i class="fas fa-key"></i> Crate Kľúče</a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-money-bill-wave"></i> Peniaze Comming Soon.</a></li>
+                <li><a href="tokens.html" class="nav-link active"><i class="fas fa-gem"></i> Tokeny</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h1 class="section-title">Crate Kľúče</h1>
+            <div class="grid">
+                <div class="item-card magic">
+                    <i class="fas fa-box-open fa-4x" style="color: var(--magic-color);"></i>
+                    <h3>Magic Crate</h3>
+                    <span class="price">1.00€</span>
+                    <button class="buy-btn" onclick="window.location.href='magicbuy.html'">KÚPIŤ</button>
+                </div>
+
+                <div class="item-card witch">
+                    <i class="fas fa-flask fa-4x" style="color: var(--witch-color);"></i>
+                    <h3>Witch Crate</h3>
+                    <span class="price">1.50€</span>
+                    <button class="buy-btn" onclick="window.location.href='witchbuy.html'">KÚPIŤ</button>
+                </div>
+
+                <div class="item-card cosmetic">
+                    <i class="fas fa-hat-wizard fa-4x" style="color: var(--cosmetic-color);"></i>
+                    <h3>Cosmetics</h3>
+                    <span class="price">2.00€</span>
+                    <button class="buy-btn" onclick="window.location.href='cosmeticsbuy.html'">KÚPIŤ</button>
+                </div>
+
+                <div class="item-card winter">
+                    <i class="fas fa-snowflake fa-4x" style="color: var(--winter-color);"></i>
+                    <h3 style="color: var(--winter-color);">Winter Crate</h3>
+                    <span class="price">3.00€</span>
+                    <button class="buy-btn" style="background: var(--winter-color); color: #000;" onclick="window.location.href='winterbuy.html'">KÚPIŤ</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

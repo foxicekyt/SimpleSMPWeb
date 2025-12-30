@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platba Ultimate++ | SimpleSMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --rank-color: #ffaa00; /* Zlatá pre Ultimate++ */
+            --paypal-blue: #0070ba;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .payment-box {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            border: 2px solid var(--rank-color);
+            box-shadow: 0 0 40px rgba(255, 170, 0, 0.2);
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+        }
+
+        .paypal-logo {
+            width: 140px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-family: 'Press+Start+2P', cursive;
+            font-size: 1rem;
+            color: var(--rank-color);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
+        }
+
+        .server-name {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .price-container {
+            background: rgba(255, 170, 0, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 170, 0, 0.1);
+        }
+
+        .price-label {
+            font-size: 0.8rem;
+            color: #aaa;
+            display: block;
+        }
+
+        .price-amount {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #4caf50;
+        }
+
+        .payment-info {
+            background: rgba(255, 170, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--rank-color);
+            text-align: left;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .pay-button {
+            background: var(--paypal-blue);
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            border-radius: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .pay-button:hover {
+            background: #005ea6;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 112, 186, 0.3);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo" class="paypal-logo">
+        
+        <h1>Ultimate++ Rank</h1>
+        <p class="server-name">SimpleSMP Minecraft Server</p>
+
+        <div class="price-container">
+            <span class="price-label">Exkluzívna cena za najvyšší rank:</span>
+            <span class="price-amount">25.00 €</span>
+        </div>
+
+        <div class="payment-info">
+            <i class="fas fa-crown" style="color: var(--rank-color);"></i> 
+            Prijímateľ: <b>SimpleSMP Team</b><br>
+            <br>
+            <strong>Minecraft Nick:</strong> Nezabudni ho napísať do poznámky pri platbe, aby sme vedeli, komu rank aktivovať!
+        </div>
+
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominikzacek69@gmail.com&item_name=Ultimate+Plus+Plus+Rank+-+SimpleSMP&amount=25.00&currency_code=EUR&no_shipping=1" class="pay-button">
+            <i class="fab fa-paypal fa-lg"></i> ZAPLATIŤ 25€ CEZ PAYPAL
+        </a>
+
+        <a href="store.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Späť do obchodu
+        </a>
+    </div>
+
+</body>
+</html>

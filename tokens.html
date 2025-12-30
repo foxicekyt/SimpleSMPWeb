@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokeny | SimpleSMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #00d2ff;
+            --dark-bg: #0f0f0f;
+            --sidebar-bg: #151515;
+            --card-bg: #1e1e1e;
+            --token-color: #9d50bb;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex; flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%; text-align: center; padding: 20px 0;
+            background: rgba(0,0,0,0.8);
+            border-bottom: 2px solid var(--token-color);
+            position: relative;
+        }
+
+        .store-logo { max-width: 250px; }
+
+        .back-home {
+            position: absolute; top: 35px; left: 30px;
+            color: white; text-decoration: none; font-weight: bold;
+        }
+
+        .main-container { display: flex; flex: 1; }
+
+        .sidebar {
+            width: 280px; background: var(--sidebar-bg);
+            padding: 40px 20px; border-right: 1px solid #333;
+        }
+
+        .sidebar h2 {
+            font-family: 'Press+Start+2P', cursive; font-size: 0.7rem;
+            color: var(--token-color); margin-bottom: 30px; text-align: center;
+        }
+
+        .nav-list { list-style: none; padding: 0; }
+        .nav-link {
+            text-decoration: none; color: #bbb; display: flex;
+            align-items: center; gap: 15px; padding: 15px;
+            border-radius: 12px; transition: 0.3s; margin-bottom: 10px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(157, 80, 187, 0.1); color: var(--token-color);
+        }
+
+        .content { flex: 1; padding: 50px; }
+        .section-title {
+            font-family: 'Press+Start+2P', cursive; font-size: 1.2rem;
+            margin-bottom: 40px; text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px; max-width: 1100px; margin: 0 auto;
+        }
+
+        .item-card {
+            background: var(--card-bg); border-radius: 20px;
+            padding: 30px 20px; text-align: center;
+            border: 1px solid #333; transition: 0.4s;
+            border-top: 5px solid var(--token-color);
+        }
+
+        .item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(157, 80, 187, 0.2);
+        }
+
+        .item-card i { margin-bottom: 20px; color: var(--token-color); filter: drop-shadow(0 0 10px var(--token-color)); }
+
+        .item-card h3 {
+            font-family: 'Press+Start+2P', cursive; font-size: 0.8rem; margin-bottom: 15px;
+        }
+
+        .price {
+            display: block; font-size: 1.8rem; font-weight: bold;
+            margin: 15px 0; color: #4caf50;
+        }
+
+        .buy-btn {
+            background: var(--token-color); color: white; border: none;
+            padding: 12px; border-radius: 10px; width: 100%;
+            font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+
+        .buy-btn:hover { background: #8e44ad; transform: scale(1.02); }
+
+        .best-deal {
+            position: relative;
+            border: 2px solid var(--token-color);
+            background: linear-gradient(145deg, #1e1e1e, #2a1535);
+        }
+
+        .badge {
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: #ffaa00; color: black; padding: 5px 15px;
+            border-radius: 20px; font-weight: bold; font-size: 0.7rem;
+        }
+
+        @media (max-width: 900px) {
+            .main-container { flex-direction: column; }
+            .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #333; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> DOMOV</a>
+        <img src="storelogo.png" alt="SimpleSMP Store" class="store-logo">
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h2>KATEGÓRIE</h2>
+            <ul class="nav-list">
+                <li><a href="store.html" class="nav-link"><i class="fas fa-crown"></i> VIP Ranky</a></li>
+                <li><a href="crates.html" class="nav-link"><i class="fas fa-key"></i> Crate Kľúče</a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-money-bill-wave"></i> Peniaze Comming Soon.</a></li>
+                <li><a href="tokens.html" class="nav-link active"><i class="fas fa-gem"></i> Tokeny</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h1 class="section-title">Tokeny</h1>
+            
+            <div class="grid">
+                <div class="item-card">
+                    <i class="fas fa-gem fa-3x"></i>
+                    <h3>100 TOKENOV</h3>
+                    <p style="font-size: 0.8rem; color: #aaa;">Základný balík tokenov pre tvoj rozvoj.</p>
+                    <span class="price">5.00€</span>
+                    <button class="buy-btn" onclick="window.location.href='token100buy.html'">KÚPIŤ</button>
+                </div>
+
+                <div class="item-card best-deal">
+                    <div class="badge">VÝHODNÉ</div>
+                    <i class="fas fa-gem fa-4x"></i>
+                    <h3>1000 TOKENOV</h3>
+                    <p style="font-size: 0.8rem; color: #aaa;">Veľký balík s lepším pomerom ceny.</p>
+                    <span class="price">25.00€</span>
+                    <button class="buy-btn" onclick="window.location.href='token1000buy.html'">KÚPIŤ</button>
+                </div>
+
+                <div class="item-card" style="border-top: 5px solid #ffaa00;">
+                    <i class="fas fa-gem fa-5x" style="color: #ffaa00; filter: drop-shadow(0 0 10px #ffaa00);"></i>
+                    <h3 style="color: #ffaa00;">5000 TOKENOV</h3>
+                    <p style="font-size: 0.8rem; color: #aaa;">Maximálny balík pre kráľov servera.</p>
+                    <span class="price">50.00€</span>
+                    <button class="buy-btn" style="background: #ffaa00; color: black;" onclick="window.location.href='token5000buy.html'">KÚPIŤ</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
