@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platba VIP | SimpleSMP</title>
+    <title>Platba VIP | SmartySMP</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -120,7 +120,7 @@
         <div class="price-tag" id="displayPrice">1.50 €</div>
 
         <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 20px;">
-            Prijímateľ: <b>SimpleSMP Team</b>
+            Prijímateľ: <b>SmartySMP Team</b>
         </p>
 
         <div class="coupon-container" id="couponArea">
@@ -129,7 +129,7 @@
             <span id="couponMessage"></span>
         </div>
 
-        <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominikzacek69@gmail.com&item_name=Kamos+VIP+Rank+SimpleSMP&amount=1.50&currency_code=EUR" class="pay-button">
+        <a id="paypalLink" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominikzacek69@gmail.com&item_name=Kamos+VIP+Rank+SmartySMP&amount=1.50&currency_code=EUR" class="pay-button">
             <i class="fab fa-paypal"></i> ZAPLATIŤ CEZ PAYPAL
         </a>
 
@@ -181,7 +181,7 @@
                 message.style.color = "#4caf50";
                 
                 // Aktualizácia PayPal odkazu
-                let baseLink = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominikzacek69@gmail.com&item_name=Kamos+VIP+Rank+SimpleSMP+(SLEVA)&currency_code=EUR";
+                let baseLink = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dominikzacek69@gmail.com&item_name=Kamos+VIP+Rank+SmartySMP+(SLEVA)&currency_code=EUR";
                 paypalLink.href = `${baseLink}&amount=${newPrice}`;
             } else {
                 message.innerText = "Neplatný kód!";
